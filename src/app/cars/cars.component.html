@@ -1,0 +1,22 @@
+<hr>
+<button type="button" (click)="clear()" [disabled]="!canAddCar">Clear</button>
+<hr>
+<input type="text" #myinput (input)="updateText(myinput.value)">
+<input type="text" [(ngModel)]="inputText">
+<p>{{ inputText }}</p>
+<hr>
+<p *ngIf="isEmpty; else notEmptyP">Empty</p>
+<ng-template #notEmptyP>
+  <p>Not empty</p>
+</ng-template>
+
+<app-car *ngFor="let c of cars">
+</app-car>
+<br>
+<button type="button" (click)="addCar()">Add new</button>
+
+<ul>
+  <li *ngFor="let i of items; let idx = index">
+    {{ idx + 1 }}) <b>{{ i.id }}</b> - <i>{{ i.name }}</i>
+  </li>
+</ul>
