@@ -1,38 +1,10 @@
-<ul>
-  <li *ngFor="let date of dates; let idx = index">
-    <div>
-      {{ idx + 1 }}) <b>{{ date | date:'dd.MM.yyyy'}}</b>
-    </div>
-  </li>
-</ul>
+<p>Форма добавления машины</p>
 <hr>
-<br>
-<button type="button" (click)="clear()" [disabled]="!canAddCar">Clear</button>
+<app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 <hr>
-<input type="text" #myinput (input)="updateText(myinput.value)">
-<input type="text" [(ngModel)]="inputText">
-<p>{{ inputText }}</p>
-<hr>
-<p *ngIf="isEmpty; else notEmptyP">Empty</p>
-<ng-template #notEmptyP>
-  <p>Not empty</p>
-</ng-template>
-<br>
-<button type="button" (click)="addCar()">Add new</button>
-<br>
-<ul>
-  <li *ngFor="let i of items; let idx = index">
-    {{ idx + 1 }}) <b>{{ i.id }}</b> - <i>{{ i.name }}</i>
-  </li>
-</ul>
-<br>
-<ul>
-  <li *ngFor="let car of cars; let idx = index">
-    <div
-      [ngStyle]="{backgroundColor: (idx+1)%2===0 ? 'red' : 'blue'}"
-      [ngClass]="{greenColor: car.length <= 3}"
-    >
-      {{ idx + 1 }}) <b>{{ car }}</b> - <i>{{ car }}</i>
-    </div>
-  </li>
-</ul>
+<div class="list-group">
+  <app-car class="list-group-item" *ngFor="let car of cars" [parameterAlias]="car">
+    <div class="card-text" appBackground>ALERT</div>
+  </app-car>
+</div>
+
