@@ -1,7 +1,19 @@
-div {
+.card-block {
   display: flex;
-  flex-direction: row;
-  margin: 0 20px 0 20px;
-  justify-content: center;
   align-items: center;
 }
+
+.card-block > * {
+  margin: 0 12px;
+}
+
+/*
+
+.card-title {
+  margin: 0 12px;
+}
+
+.card-text {
+  margin: 0 12px;
+}
+*/
