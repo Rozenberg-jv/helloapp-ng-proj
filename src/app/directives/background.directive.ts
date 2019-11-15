@@ -1,4 +1,4 @@
-import {Directive, ElementRef, OnInit} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[appBackground]'
@@ -6,12 +6,26 @@ import {Directive, ElementRef, OnInit} from '@angular/core';
 
 export class BackgroundDirective implements OnInit {
 
-  constructor(private element: ElementRef) {
+  @Input('appBackground') hoverColor: string = 'gray';
+  @Input() defaultColor: string = 'transparent';
+
+  @HostBinding('style.backgroundColor') bgColor: string;
+
+  constructor(private el: ElementRef) {
+  }
+
+  @HostListener('mouseenter') mouseEnter() {
+
+    this.bgColor = this.hoverColor;
+  }
+
+  @HostListener('mouseleave') mouseLeave() {
+
+    this.bgColor = this.defaultColor;
   }
 
   ngOnInit(): void {
-    this.element.nativeElement.style.backgroundColor = 'green';
+    this.bgColor = this.defaultColor;
   }
-
 
 }

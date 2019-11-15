@@ -8,7 +8,8 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AddCarComponent} from './add-car/add-car.component';
 import {BackgroundDirective} from './directives/background.directive';
-import { MyDirectiveDirective } from './directives/my-directive.directive';
+import { YearFontWeightDirective } from './directives/year-font-weight.directive';
+import { BgButtonDirective } from './directives/bg-button.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
     CarComponent,
     AddCarComponent,
     BackgroundDirective,
-    MyDirectiveDirective
+    YearFontWeightDirective,
+    BgButtonDirective
   ],
   imports: [
     BrowserModule,

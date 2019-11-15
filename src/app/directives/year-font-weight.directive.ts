@@ -1,9 +1,10 @@
 import {Directive, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
-  selector: '[appMyDirective]'
+  selector: '[appYearFontWeight]'
 })
-export class MyDirectiveDirective implements OnInit {
+
+export class YearFontWeightDirective implements OnInit {
 
   @Input() year: number;
 

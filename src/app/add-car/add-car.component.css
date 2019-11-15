@@ -1,3 +1,9 @@
 input, button {
-  margin: 8px
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.bg-color-button {
+  background-color: darkblue;
+  color: bisque;
 }

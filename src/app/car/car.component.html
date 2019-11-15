@@ -1,5 +1,5 @@
-<div class="card-block">
+<div class="card-block" appBackground="lightgreen" [defaultColor]="'lightgray'">
   <h4 class="card-title">Название: {{ carItem.name }} </h4>
-  <p class="card-text" appMyDirective year="{{ carItem.year }}">Год: {{ carItem.year }}</p>
+  <p class="card-text" appYearFontWeight year="{{ carItem.year }}">Год: {{ carItem.year }}</p>
   <ng-content></ng-content>
 </div>
